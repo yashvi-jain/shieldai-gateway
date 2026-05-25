@@ -1,0 +1,21 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+# Environment
+.env
+
+# Model Weights
+*.bin
+*.safetensors
+
+# Build
+dist/
+build/
+
+# OS
+.DS_Store
