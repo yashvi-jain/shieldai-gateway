@@ -1,3 +1,11 @@
+---
+title: shieldAI Gateway
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 8000
+---
+
 # shieldAI Gateway
 
 AI-powered security gateway for LLM applications.
