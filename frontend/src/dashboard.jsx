@@ -17,13 +17,6 @@ function Dashboard() {
   const [logs, setLogs] = useState([]);
 
   useEffect(() => {
-  const password = prompt("Enter Admin Password:");
-  if (password !== "your_secret_password") {
-    window.location.href = "/";
-  }
-  }, []);
-
-  useEffect(() => {
     fetchLogs();
   }, []);
 
