@@ -21,7 +21,7 @@ function Dashboard() {
   }, []);
 
   const fetchLogs = async () => {
-    const res = await API.get("/logs");
+    const res = await API.get("https://yashvi-jain-shieldai-gateway.hf.space/analytics/logs");
     setLogs(res.data);
   };
 
