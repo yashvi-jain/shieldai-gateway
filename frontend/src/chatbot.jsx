@@ -12,7 +12,7 @@ function Chatbot() {
     try {
       setLoading(true);
 
-      const res = await axios.post("/scan", {
+      const res = await axios.post("https://yashvi-jain-shieldai-gateway.hf.space/api/scan", {
         prompt,
       });
 
