@@ -1,14 +1,12 @@
 ---
 title: shieldAI Gateway
-colorFrom: blue
-colorTo: indigo
 sdk: docker
 app_port: 8000
 ---
 
 # shieldAI Gateway
 
-AI-powered security gateway for LLM applications.
+Full-stack AI-powered security gateway to protect LLM applications from possible prompt injection, SQL injection and jailbreaking attacks.
 
 ## Features
 
@@ -16,15 +14,22 @@ AI-powered security gateway for LLM applications.
 - SQL Injection Detection
 - Sensitive Data Leak Detection
 - Transformer-Based NLP Classification
-- Threat Analytics Dashboard
+- Real-time risk scoring
+- Threat Analytics Dashboard for the Admin
+- Test Chatbot to
 
 ## Tech Stack
 
-- FastAPI
-- React
-- Transformers
-- SQLite
-- Docker
+- Frontend:
+  - React, Vite, CSS, Axios
+- Backend:
+  - FastAPI, Python
+- Database:
+  - SQLite
+- DevOps
+  - Vercel(Frontend), Hugging Face Spaces(Backend, ML interface), Docker(Containerization)
+
+View the project here: https://shieldai-gateway.vercel.app/
 
 ## Run Backend
 
