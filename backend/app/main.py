@@ -23,9 +23,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(scan_router)
+app.include_router(scan_router, prefix="/api")
 
-app.include_router(analytics_router)
+app.include_router(analytics_router, prefix="/analytics")
 
 @app.get("/")
 def root():
