@@ -11,3 +11,4 @@ transformers
 torch
 accelerate
 openai
+psycopg2-binary
