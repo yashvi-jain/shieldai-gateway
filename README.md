@@ -16,7 +16,7 @@ Full-stack AI-powered security gateway to protect LLM applications from possible
 - Transformer-Based NLP Classification
 - Real-time risk scoring
 - Threat Analytics Dashboard for the Admin
-- Test Chatbot to
+- Frontend - AI Chatbot to test the working of the gateway
 
 ## Tech Stack
 
@@ -25,9 +25,9 @@ Full-stack AI-powered security gateway to protect LLM applications from possible
 - Backend:
   - FastAPI, Python
 - Database:
-  - SQLite
+  - PostgreSQL
 - DevOps
-  - Vercel(Frontend), Hugging Face Spaces(Backend, ML interface), Docker(Containerization)
+  - Vercel(Frontend), Hugging Face Spaces(Backend, ML interface), Supabase(Database), Docker(Containerization)
 
 View the project here: https://shieldai-gateway.vercel.app/
 
