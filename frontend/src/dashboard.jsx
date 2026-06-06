@@ -18,7 +18,7 @@ function Dashboard() {
 
   useEffect(() => {
   const password = prompt("Enter Admin Password:");
-  if (password !== "your_secret_password") {
+  if (password !== os.getenv("ADMIN_PW")) {
     window.location.href = "/";
   }
   }, []);
