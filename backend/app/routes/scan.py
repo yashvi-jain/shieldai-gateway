@@ -79,12 +79,10 @@ def scan_prompt(
 
             "threats": threats,
 
-            "risk_score": risk_score,
+            #"risk_score": risk_score,
 
-            "action": action,
-
-            "ai_confidence":
-                ml_result["score"],
+            #"ai_confidence":
+            #    ml_result["score"],
 
             "response":
                 "Prompt blocked by ShieldAI Gateway"
@@ -94,16 +92,14 @@ def scan_prompt(
 
     return {
 
-        "status": "safe",
+        "status": action,
 
         "threats": threats,
 
-        "risk_score": risk_score,
+        #"risk_score": risk_score,
 
-        "action": action,
-
-        "ai_confidence":
-            ml_result["score"],
+        #"ai_confidence":
+        #    ml_result["score"],
 
         "response": llm_response
     }

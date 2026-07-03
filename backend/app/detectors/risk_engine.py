@@ -10,7 +10,7 @@ def calculate_risk(
 
     if ml_result["is_attack"]:
         ml_score = int(
-            ml_result["score"] **20 *100
+            ml_result["score"] **20 *95
         )
         score += int(
             ml_score 

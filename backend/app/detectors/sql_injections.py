@@ -28,14 +28,3 @@ def detect_sql_injection(text):
             continue
 
     return False
-
-print(len(SQL_PATTERNS))
-print(SQL_PATTERNS[:3])
-
-test = "1' OR '1'='1' --"
-for p in SQL_PATTERNS:
-    try:
-        if re.search(p, test, re.IGNORECASE):
-            print("MATCHED:", p)
-    except re.error as e:
-        print("BAD PATTERN:", p, "->", e)
