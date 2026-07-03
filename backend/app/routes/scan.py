@@ -3,21 +3,11 @@ from sqlalchemy.orm import Session
 
 from app.schema.schema import ScanRequest
 
-from app.detectors.prompt_injections import (
-    detect_prompt_injection
-)
+from app.detectors.sql_injections import detect_sql_injection
 
-from app.detectors.sql_injections import (
-    detect_sql_injection
-)
+from app.detectors.sensitive_data import detect_sensitive_data
 
-from app.detectors.sensitive_data import (
-    detect_sensitive_data
-)
-
-from app.detectors.risk_engine import (
-    calculate_risk
-)
+from app.detectors.risk_engine import calculate_risk
 
 from app.ml.inference import classify_prompt
 
@@ -47,8 +37,6 @@ def scan_prompt(
 
     text = request.prompt
 
-    prompt_hits = detect_prompt_injection(text)
-
     sql_hits = detect_sql_injection(text)
 
     sensitive_hits = detect_sensitive_data(text)
@@ -56,9 +44,6 @@ def scan_prompt(
     ml_result = classify_prompt(text)
 
     threats = []
-
-    if prompt_hits:
-        threats.append("Rule-Based Prompt Injection")
 
     if sql_hits:
         threats.append("SQL Injection")
@@ -70,7 +55,6 @@ def scan_prompt(
         threats.append("AI Prompt Injection")
 
     risk_score, action = calculate_risk(
-        prompt_hits,
         sql_hits,
         sensitive_hits,
         ml_result
@@ -93,14 +77,14 @@ def scan_prompt(
 
             "status": "blocked",
 
-            #"threats": threats,
+            "threats": threats,
 
-            #"risk_score": risk_score,
+            "risk_score": risk_score,
 
             "action": action,
 
-            #"ai_confidence":
-            #    ml_result["score"],
+            "ai_confidence":
+                ml_result["score"],
 
             "response":
                 "Prompt blocked by ShieldAI Gateway"
@@ -112,14 +96,14 @@ def scan_prompt(
 
         "status": "safe",
 
-        #"threats": threats,
+        "threats": threats,
 
-        #"risk_score": risk_score,
+        "risk_score": risk_score,
 
         "action": action,
 
-        #"ai_confidence":
-        #    ml_result["score"],
+        "ai_confidence":
+            ml_result["score"],
 
         "response": llm_response
     }
